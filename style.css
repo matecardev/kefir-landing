@@ -1,1 +1,497 @@
-@import "tailwindcss"
+/* --- Reseteo básico y Fuentes Globales --- */
+body {
+  margin: 0;
+  font-family: "Plus Jakarta Sans", "Noto Sans", sans-serif;
+  background-color: #FFFFFF; /* bg-[#FFFFFF] del contenedor principal */
+  color: #1C160C; /* Color de texto base */
+  overflow-x: hidden; /* Evita scroll horizontal global si algo se desborda */
+}
+
+/* --- Contenedores Principales --- */
+.page-container {
+  position: relative;
+  display: flex;
+  width: 100%;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+.layout-container {
+  display: flex;
+  height: 100%;
+  flex-grow: 1;
+  flex-direction: column;
+}
+
+/* --- Cabecera (Header) --- */
+.main-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  white-space: nowrap;
+  border-bottom: 1px solid #F4EFE6;
+  padding: 0.75rem 2.5rem; /* py-3 px-10 */
+}
+
+.logo-area {
+  display: flex;
+  align-items: center;
+  gap: 1rem; /* gap-4 */
+  color: #1C160C;
+}
+
+.logo-icon-wrapper {
+  width: 1rem; /* size-4 */
+  height: 1rem; /* size-4 */
+}
+
+.logo-icon-wrapper svg {
+  width: 100%;
+  height: 100%;
+}
+
+.logo-text {
+  color: #1C160C;
+  font-size: 1.125rem; /* text-lg */
+  font-weight: 700; /* font-bold */
+  line-height: 1.25; /* leading-tight */
+  letter-spacing: -0.015em;
+}
+
+.main-navigation {
+  display: flex;
+  flex: 1;
+  justify-content: flex-end;
+  align-items: center; /* Para alinear el botón con los links */
+  gap: 2rem; /* gap-8 (entre grupo de links y botón) */
+}
+
+.nav-links-group {
+  display: flex;
+  align-items: center;
+  gap: 2.25rem; /* gap-9 */
+}
+
+.nav-link {
+  color: #1C160C;
+  font-size: 0.875rem; /* text-sm */
+  font-weight: 500; /* font-medium */
+  line-height: 1.5; /* leading-normal */
+  text-decoration: none;
+}
+.nav-link:hover {
+  text-decoration: underline;
+}
+
+/* --- Botones --- */
+.cta-button {
+  display: flex;
+  min-width: 84px;
+  max-width: 480px;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border-radius: 9999px; /* rounded-full */
+  background-color: #019863;
+  color: #FFFFFF;
+  text-decoration: none;
+  border: none;
+}
+
+.header-cta {
+  height: 2.5rem; /* h-10 */
+  padding: 0 1rem; /* px-4 */
+  font-size: 0.875rem; /* text-sm */
+  font-weight: 700; /* font-bold */
+  line-height: 1.5; /* leading-normal */
+  letter-spacing: 0.015em;
+}
+
+.button-text-truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.button-icon {
+  margin-right: 0.5rem; /* mr-2 */
+  flex-shrink: 0;
+}
+
+
+/* --- Contenido Principal de la Página --- */
+.page-content-wrapper {
+  padding: 1.25rem 10rem; /* py-5 px-40 */
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  justify-content: center;
+}
+
+.content-section-container {
+  display: flex;
+  flex-direction: column;
+  max-width: 960px;
+  flex: 1;
+  margin-left: auto; /* Para centrar si page-content-wrapper es más ancho */
+  margin-right: auto; /* Para centrar si page-content-wrapper es más ancho */
+  width: 100%; /* Ocupa el espacio disponible */
+}
+
+/* --- Sección Hero --- */
+.hero-outer-container {
+  /* Contenedor para queries de contenedor si fueran necesarios con JS o CSS moderno */
+}
+
+.hero-inner-padding-container {
+  /* Estilos base si los tuviera */
+}
+
+.hero-section {
+  display: flex;
+  min-height: 480px;
+  flex-direction: column;
+  gap: 1.5rem; /* gap-6 */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem; /* p-4 */
+}
+
+.hero-text-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem; /* gap-2 */
+  text-align: center;
+}
+
+.hero-title {
+  color: #FFFFFF;
+  font-size: 2.25rem; /* text-4xl */
+  font-weight: 900; /* font-black */
+  line-height: 1.25; /* leading-tight */
+  letter-spacing: -0.033em;
+}
+
+.hero-title-highlight {
+  display: block;
+  font-size: 3rem; /* text-5xl */
+}
+
+.hero-subtitle {
+  color: #FFFFFF;
+  font-size: 0.875rem; /* text-sm */
+  font-weight: 400; /* font-normal */
+  line-height: 1.5; /* leading-normal */
+}
+
+.hero-buttons-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem; /* gap-3 */
+  justify-content: center;
+}
+
+.hero-action-button {
+  height: 2.5rem; /* h-10 */
+  padding: 0 1rem; /* px-4 */
+  font-size: 0.875rem; /* text-sm */
+  font-weight: 700; /* font-bold */
+  line-height: 1.5; /* leading-normal */
+  letter-spacing: 0.015em;
+}
+
+/* --- Secciones Generales de Información --- */
+.info-section, .benefits-section, .testimonials-section, .final-cta-section {
+  /* Espaciado común si se desea */
+}
+
+.section-heading {
+  color: #1C160C;
+  font-size: 22px;
+  font-weight: 700; /* font-bold */
+  line-height: 1.25; /* leading-tight */
+  letter-spacing: -0.015em;
+  padding: 1.25rem 1rem 0.75rem; /* pt-5 px-4 pb-3 */
+}
+
+.section-paragraph {
+  color: #1C160C;
+  font-size: 1rem; /* text-base */
+  font-weight: 400; /* font-normal */
+  line-height: 1.5; /* leading-normal */
+  padding: 0.25rem 1rem 0.75rem; /* pt-1 px-4 pb-3 */
+}
+
+/* --- Sección de Beneficios --- */
+.benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(158px, 1fr));
+  gap: 0.75rem; /* gap-3 */
+  padding: 1rem; /* p-4 */
+}
+
+.benefit-card {
+  display: flex;
+  flex: 1; /* Ocupa el espacio disponible en la celda del grid */
+  gap: 0.75rem; /* gap-3 */
+  border-radius: 0.5rem; /* rounded-lg */
+  border: 1px solid #E9DFCE;
+  background-color: #FFFFFF;
+  padding: 1rem; /* p-4 */
+  align-items: center;
+}
+
+.benefit-icon-wrapper {
+  color: #1C160C;
+}
+.benefit-icon-wrapper svg {
+  display: block; /* Para evitar espacio extra debajo */
+}
+
+.benefit-card-title {
+  color: #1C160C;
+  font-size: 1rem; /* text-base */
+  font-weight: 700; /* font-bold */
+  line-height: 1.25; /* leading-tight */
+}
+
+/* --- Sección de Testimonios --- */
+.testimonials-scroll-container {
+  display: flex;
+  overflow-x: auto; /* Cambiado a overflow-x para scroll horizontal */
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+.testimonials-scroll-container::-webkit-scrollbar {
+  display: none; /* Safari, Chrome, Opera */
+}
+
+.testimonials-inner-wrapper {
+  display: flex;
+  align-items: stretch; /* Para que las tarjetas tengan la misma altura si el contenido varía */
+  padding: 1rem; /* p-4 */
+  gap: 0.75rem; /* gap-3 */
+}
+
+.testimonial-card {
+  display: flex;
+  height: 100%; /* Ocupa toda la altura del contenedor padre */
+  flex: 1 0 15rem; /* flex-grow, flex-shrink, flex-basis (min-w-60 -> 15rem) */
+  flex-direction: column;
+  gap: 1rem; /* gap-4 */
+  border-radius: 0.5rem; /* rounded-lg */
+  min-width: 15rem; /* min-w-60 */
+}
+
+.testimonial-image {
+  width: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  aspect-ratio: 3 / 4;
+  background-size: cover;
+  border-radius: 0.75rem; /* rounded-xl */
+  /* display: flex; flex-direction: column; son innecesarios si es solo para la imagen */
+}
+
+.testimonial-content {
+  /* Contenedor para el texto del testimonio */
+}
+
+.testimonial-name {
+  color: #1C160C;
+  font-size: 1rem; /* text-base */
+  font-weight: 500; /* font-medium */
+  line-height: 1.5; /* leading-normal */
+}
+
+.testimonial-quote {
+  color: #A18249;
+  font-size: 0.875rem; /* text-sm */
+  font-weight: 400; /* font-normal */
+  line-height: 1.5; /* leading-normal */
+}
+
+/* --- Sección Final CTA --- */
+.final-cta-button-container {
+  display: flex;
+  padding: 0.75rem 1rem; /* py-3 px-4 */
+  justify-content: center;
+}
+
+.large-cta-button {
+  height: 3rem; /* h-12 */
+  padding: 0 1.25rem; /* px-5 */
+  font-size: 1rem; /* text-base */
+  font-weight: 700; /* font-bold */
+  line-height: 1.5; /* leading-normal */
+  letter-spacing: 0.015em;
+}
+
+
+/* --- Pie de Página (Footer) --- */
+.footer-outer-container {
+  display: flex;
+  flex-direction: column; /* Comportamiento de layout-content-container */
+}
+
+.main-footer {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem; /* gap-6 */
+  padding: 2.5rem 1.25rem; /* py-10 px-5 */
+  text-align: center;
+}
+
+.footer-links-group {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem; /* gap-6 */
+}
+
+.footer-link {
+  color: #A18249;
+  font-size: 1rem; /* text-base */
+  font-weight: 400; /* font-normal */
+  line-height: 1.5; /* leading-normal */
+  min-width: 10rem; /* min-w-40 */
+  text-decoration: none;
+}
+.footer-link:hover {
+  text-decoration: underline;
+}
+
+.social-icons-group {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem; /* gap-4 */
+}
+
+.social-icon-link {
+  text-decoration: none;
+}
+
+.social-icon {
+  color: #A18249;
+}
+.social-icon svg {
+  display: block; /* Para evitar espacio extra debajo */
+}
+
+.copyright-text {
+  color: #A18249;
+  font-size: 1rem; /* text-base */
+  font-weight: 400; /* font-normal */
+  line-height: 1.5; /* leading-normal */
+}
+
+
+/* --- Estilos Responsivos (Simulando @[480px]:) --- */
+@media (min-width: 480px) {
+  .hero-inner-padding-container {
+    padding: 1rem; /* @[480px]:p-4 */
+  }
+
+  .hero-section {
+    gap: 2rem; /* @[480px]:gap-8 */
+    border-radius: 0.75rem; /* @[480px]:rounded-xl */
+  }
+
+  .hero-title {
+    font-size: 3rem; /* @[480px]:text-5xl */
+    /* font-weight, line-height, letter-spacing no cambian */
+  }
+  .hero-title-highlight {
+    font-size: 3.75rem; /* @[480px]:text-6xl */
+  }
+
+  .hero-subtitle {
+    font-size: 1rem; /* @[480px]:text-base */
+    /* font-weight, line-height no cambian */
+  }
+
+  .hero-action-button {
+    height: 3rem; /* @[480px]:h-12 */
+    padding: 0 1.25rem; /* @[480px]:px-5 */
+    font-size: 1rem; /* @[480px]:text-base */
+    /* font-weight, line-height, letter-spacing no cambian */
+  }
+
+  .footer-links-group {
+    flex-direction: row; /* @[480px]:flex-row */
+    justify-content: space-around; /* @[480px]:justify-around */
+  }
+}
+
+/* --- Ajustes para pantallas más pequeñas si los contenedores principales son muy anchos --- */
+@media (max-width: 1200px) {
+  .page-content-wrapper {
+    padding-left: 5rem;
+    padding-right: 5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .main-header {
+    padding: 0.75rem 1rem;
+  }
+  .page-content-wrapper {
+    padding: 1rem 1rem; /* py-5 reducido, px-40 reducido */
+  }
+  .main-navigation {
+    gap: 1rem;
+  }
+  .nav-links-group {
+    gap: 1rem;
+  }
+  .nav-link {
+    font-size: 0.8rem;
+  }
+  .logo-text {
+    font-size: 1rem;
+  }
+  .header-cta {
+    padding: 0 0.75rem;
+    font-size: 0.8rem;
+    height: 2.25rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .main-header {
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: flex-start; /* O center si prefieres */
+  }
+  .main-navigation {
+    width: 100%;
+    justify-content: space-between; /* Para distribuir links y botón */
+  }
+  .nav-links-group {
+    gap: 0.75rem;
+    flex-wrap: wrap; /* Para que los links pasen a otra línea si no caben */
+  }
+  .page-content-wrapper {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+  .section-heading {
+    font-size: 18px;
+    padding: 1rem 0.5rem 0.5rem;
+  }
+  .hero-title {
+    font-size: 1.8rem;
+  }
+  .hero-title-highlight {
+    font-size: 2.5rem;
+  }
+  .benefits-grid {
+    grid-template-columns: 1fr; /* Una columna en móviles */
+  }
+}
